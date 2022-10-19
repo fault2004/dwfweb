@@ -15,7 +15,7 @@ dwarf, from Dwarf Fortress (Video game)
 
 ## Features. (?)
 
-* Using two template, smu, sed, tr, cut and POSIX parameter substitution
+* Using two template, loop, smu, sed, tr, cut and POSIX parameter substitution
 * Title by filename of markdown files
 * Generate menu and date
 * Markdown supported by default and only
