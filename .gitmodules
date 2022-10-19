@@ -1,0 +1,4 @@
+[submodule "smu"]
+    shallow = true
+    path = smu
+    url = https://github.com/Gottox/smu.git

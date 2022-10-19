@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8>
+<title>TITLE | dwfweb.</title>
+<link rel=stylesheet href=m/main.css>
+</head>
+<body>
+<div id=menu>
+<a id=menu_link href=index.html>Index</a>

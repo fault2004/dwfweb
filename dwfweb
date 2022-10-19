@@ -1,0 +1,18 @@
+#!/bin/sh
+# dwfweb, static website generator, emelhnn @ 2022, MIT <https://github.com/emelhnn/dwfweb>
+[ ! -f smu/smu ] && (cd smu && make); [ -d o ] && rm -rf o; mkdir o; cp -r m o
+for pd in p/*; do
+p="${pd##*/}"
+pn="$(echo "$p" | cut -c 1,1 | tr '[:lower:]' '[:upper:]')$(echo "$p" | cut -c2-)"
+{
+    sed "s/TITLE/${pn}/g" header
+    for pl in p/*; do
+        P="${pl##*/}"
+        PN="$(echo "$P" | cut -c 1,1 | tr '[:lower:]' '[:upper:]')$(echo "$P" | cut -c2-)"
+        [ "$P" != "index" ] && echo "<a id=menu_link href=${P}.html>${PN}</a>"
+    done
+    echo "</div>"
+    smu/smu p/"$p"
+    sed "s/DATE/$(date)/g" footer
+} > o/"$p".html
+done
