@@ -11,7 +11,7 @@ that convert markdown into HTML easily.
 
 <img src="m/dwarf_fortress.png"></img>
 
-<pre>dwarf, from Dwarf Fortress (Video game)</pre>
+dwarf, from Dwarf Fortress (Video game)
 
 ## Features. (?)
 
