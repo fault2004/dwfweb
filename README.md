@@ -52,6 +52,8 @@ You need build tools to building smu from source, dwfweb will build smu for you.
 		git submodule update --init
 		./dwfweb
 
+After that, generated website will be available in 'o' folder
+
 ## License.
 
 dwfweb created by Shinathip Duanghoy (aka [emelhnn](https://github.com/emelhnn))
