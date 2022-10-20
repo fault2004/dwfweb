@@ -1,7 +1,7 @@
 # dwfweb.
 
 <https://github.com/emelhnn/dwfweb>
-[(the code itself)](https://raw.githubusercontent.com/emelhnn/dwfweb/master/dwfweb)
+[(example website)](https://emelhnn.github.io/dwfweb/)
 
 My attempt at creating a *very bad* 18 line of code
 markdown static website generator based on POSIX script, powered by smu.
@@ -20,6 +20,37 @@ dwarf, from Dwarf Fortress (Video game)
 * Generate menu and date
 * Markdown supported by default and only
 * POSIX-compliant
+
+## Code.
+
+The code itself.
+
+		#!/bin/sh
+		# dwfweb, static website generator, emelhnn @ 2022, MIT <https://github.com/emelhnn/dwfweb>
+		[ ! -f smu/smu ] && (cd smu && make); [ -d o ] && rm -rf o; mkdir o; cp -r m o
+		for pd in p/*; do
+		p="${pd##*/}"; pe="${p%%.*}"
+		pn="$(echo "$pe" | cut -c 1,1 | tr '[:lower:]' '[:upper:]')$(echo "$pe" | cut -c2-)"
+		{
+		    sed "s/TITLE/${pn}/g" header
+		    for pl in p/*; do
+		        P="${pl##*/}"; PE="${P%%.*}"
+		        PN="$(echo "$PE" | cut -c 1,1 | tr '[:lower:]' '[:upper:]')$(echo "$PE" | cut -c2-)"
+		        [ "$PE" != "index" ] && echo "<a id=menu_link href=${PE}.html>${PN}</a>"
+		    done
+		    echo "</div>"
+		    smu/smu p/"$p"
+		    sed "s/DATE/$(date)/g" footer
+		} > o/"$pe".html
+		done
+
+## Running.
+
+You need build tools to building smu from source, dwfweb will build smu for you.
+
+		git clone https://github.com/emelhnn/dwfweb && cd dwfweb
+		git submodule update --init
+		./dwfweb
 
 ## License.
 
