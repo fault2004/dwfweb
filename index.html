@@ -13,7 +13,7 @@
 </div>
 <h1>dwfweb.</h1>
 <p><a href="https://github.com/emelhnn/dwfweb">https://github.com/emelhnn/dwfweb</a>
-<a href="https://raw.githubusercontent.com/emelhnn/dwfweb/master/dwfweb">(the code itself)</a></p>
+<a href="https://emelhnn.github.io/dwfweb/">(example website)</a></p>
 <p>My attempt at creating a <em>very bad</em> 18 line of code
 markdown static website generator based on POSIX script, powered by smu.</p>
 <p><a href="https://github.com/Gottox/smu">smu</a> is simple and minimal markup language
@@ -28,10 +28,37 @@ that convert markdown into HTML easily.</p>
 <li>Markdown supported by default and only</li>
 <li>POSIX-compliant</li>
 </ul>
+<h2>Code.</h2>
+<p>The code itself.</p>
+<pre><code>	#!/bin/sh
+	# dwfweb, static website generator, emelhnn @ 2022, MIT &lt;https://github.com/emelhnn/dwfweb&gt;
+	[ ! -f smu/smu ] &amp;&amp; (cd smu &amp;&amp; make); [ -d o ] &amp;&amp; rm -rf o; mkdir o; cp -r m o
+	for pd in p/*; do
+	p=&quot;${pd##*/}&quot;; pe=&quot;${p%%.*}&quot;
+	pn=&quot;$(echo &quot;$pe&quot; | cut -c 1,1 | tr '[:lower:]' '[:upper:]')$(echo &quot;$pe&quot; | cut -c2-)&quot;
+	{
+	    sed &quot;s/TITLE/${pn}/g&quot; header
+	    for pl in p/*; do
+	        P=&quot;${pl##*/}&quot;; PE=&quot;${P%%.*}&quot;
+	        PN=&quot;$(echo &quot;$PE&quot; | cut -c 1,1 | tr '[:lower:]' '[:upper:]')$(echo &quot;$PE&quot; | cut -c2-)&quot;
+	        [ &quot;$PE&quot; != &quot;index&quot; ] &amp;&amp; echo &quot;&lt;a id=menu_link href=${PE}.html&gt;${PN}&lt;/a&gt;&quot;
+	    done
+	    echo &quot;&lt;/div&gt;&quot;
+	    smu/smu p/&quot;$p&quot;
+	    sed &quot;s/DATE/$(date)/g&quot; footer
+	} &gt; o/&quot;$pe&quot;.html
+	done
+</code></pre>
+<h2>Running.</h2>
+<p>You need build tools to building smu from source, dwfweb will build smu for you.</p>
+<pre><code>	git clone https://github.com/emelhnn/dwfweb &amp;&amp; cd dwfweb
+	git submodule update --init
+	./dwfweb
+</code></pre>
 <h2>License.</h2>
 <p>dwfweb created by Shinathip Duanghoy (aka <a href="https://github.com/emelhnn">emelhnn</a>)
 under the MIT License. </p>
 <hr>
-<pre>Generated on Wed Oct 19 23:37:37 UTC 2022, <a href="https://github.com/emelhnn/dwfweb">https://github.com/emelhnn/dwfweb</a></pre>
+<pre>Generated on Thu Oct 20 00:03:42 UTC 2022, <a href="https://github.com/emelhnn/dwfweb">https://github.com/emelhnn/dwfweb</a></pre>
 </body>
 </html>
