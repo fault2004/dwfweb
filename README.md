@@ -58,3 +58,6 @@ After that, generated website will be available in 'o' folder
 
 dwfweb created by Shinathip Duanghoy (aka [emelhnn](https://github.com/emelhnn))
 under the MIT License. 
+
+smu created by [Enno T. Boland](https://github.com/Gottox)
+under the MIT/X Consortium License. 
