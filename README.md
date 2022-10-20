@@ -9,7 +9,7 @@ markdown static website generator based on POSIX script, powered by smu.
 [smu](https://github.com/Gottox/smu) is simple and minimal markup language
 that convert markdown into HTML easily.
 
-<img src="m/dwarf_fortress.png"></img>
+![dwarf](m/dwarf_fortress.png)
 
 dwarf, from Dwarf Fortress (Video game)
 
