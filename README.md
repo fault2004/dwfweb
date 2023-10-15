@@ -1,7 +1,7 @@
 # dwfweb.
 
-<https://github.com/emelhnn/dwfweb>
-[(example website)](https://emelhnn.github.io/dwfweb/)
+<https://github.com/fault2004/dwfweb>
+[(example website)](https://fault2004.github.io/dwfweb/)
 
 My attempt at creating a *very bad* 18 line of code
 markdown static website generator based on POSIX script, powered by smu.
