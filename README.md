@@ -26,7 +26,7 @@ dwarf, from Dwarf Fortress (Video game)
 The code itself.
 
 		#!/bin/sh
-		# dwfweb, static website generator, emelhnn @ 2022, MIT <https://github.com/emelhnn/dwfweb>
+		# dwfweb, static website generator, fault2004 @ 2023, MIT <https://github.com/fault2004/dwfweb>
 		[ ! -f smu/smu ] && (cd smu && make); [ -d o ] && rm -rf o; mkdir o; cp -r m o
 		for pd in p/*; do
 		p="${pd##*/}"; pe="${p%%.*}"
@@ -48,7 +48,7 @@ The code itself.
 
 You need build tools to building smu from source, dwfweb will build smu for you.
 
-		git clone https://github.com/emelhnn/dwfweb && cd dwfweb
+		git clone https://github.com/fault2004/dwfweb && cd dwfweb
 		git submodule update --init
 		./dwfweb
 
