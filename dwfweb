@@ -1,5 +1,5 @@
 #!/bin/sh
-# dwfweb, static website generator, emelhnn @ 2022, MIT <https://github.com/emelhnn/dwfweb>
+# dwfweb, static website generator, fault2004 @ 2023, MIT <https://github.com/fault2004/dwfweb>
 [ ! -f smu/smu ] && (cd smu && make); [ -d o ] && rm -rf o; mkdir o; cp -r m o
 for pd in p/*; do
 p="${pd##*/}"; pe="${p%%.*}"
