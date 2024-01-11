@@ -56,7 +56,7 @@ After that, generated website will be available in 'o' folder
 
 ## License.
 
-dwfweb created by Chinathip Duanghoy (aka [fault2004](https://github.com/fault2004))
+dwfweb created by Supphakit Duanghoy (aka [fault2004](https://github.com/fault2004))
 under the MIT License. 
 
 smu created by [Enno T. Boland](https://github.com/Gottox)
